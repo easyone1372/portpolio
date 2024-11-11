@@ -8,11 +8,13 @@ type TitleTextType = {
 };
 
 const TitleText = ({ content, color, className }: TitleTextType) => {
-  <NormalText
-    color={color}
-    className={`w-fit text-center text-5xl ${className}`}
-    content={content}
-  />;
+  return (
+    <NormalText
+      color={color}
+      className={`w-fit text-center text-5xl ${className}`}
+      content={content}
+    />
+  );
 };
 
 export default TitleText;

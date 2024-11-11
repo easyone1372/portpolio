@@ -1,12 +1,9 @@
-:root{
-    //color
-    --greyblue--color: #536493,
-    --brown--color:#D4BDAC,
-    --beige--color:#FFF1DB,
-    --rose--color:#EF5A6F,
-    --gray500-color:#6b7280;
-    --gray800-color:#1f2937,
-
+:root {
+  /*color*/
+  --brown--color: #d4bdac;
+  --beige--color: #fff1db;
+  --rose--color: #ef5a6f;
+  --grayblue--color: #536493;
+  --gray500-color: #6b7280;
+  --gray800-color: #1f2937;
 }
-
-
