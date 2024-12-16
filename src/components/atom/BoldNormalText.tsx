@@ -17,7 +17,7 @@ const BoldNormalText = ({
     <div className="flex gap-2">
       <NormalText
         content={keyBold}
-        className="w-[70px] border-r-4 border-gray-800 font-semibold pr-px"
+        className="w-[80px] border-r-4 border-gray-800 font-semibold pr-px"
       />
       <NormalText
         content={contentNormal}

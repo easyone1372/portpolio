@@ -15,6 +15,7 @@ module.exports = {
         css: "#FA9C28",
         xd: "#E441B7",
         ps: "#56A7F8",
+        gaWhite: "#f0f0f0",
       },
     },
   },
