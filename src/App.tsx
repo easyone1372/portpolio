@@ -3,13 +3,14 @@ import React, { useRef } from "react";
 import HeaderContent from "./components/molecules/HeaderContent";
 import TitleSection from "./pages/section1/TitleSection";
 import AboutMeSection from "./pages/section2/AboutMeSection";
-import ProjectSection from "./pages/section3/ProjectSection";
+import ProjectSection from "./pages/section4/ProjectSection";
+import SkillSection from "./pages/section3/SkillSection";
 
 function App() {
   const titleRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
-  const designRef = useRef<HTMLDivElement>(null);
+  const skillRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
@@ -23,7 +24,7 @@ function App() {
         titleRef={titleRef}
         aboutMeRef={aboutMeRef}
         projectRef={projectRef}
-        designRef={designRef}
+        skillRef={skillRef}
         scrollToSection={scrollToSection}
       />
       <div className="h-screen snap-y snap-mandatory overflow-y-scroll">
@@ -32,6 +33,9 @@ function App() {
         </div>
         <div ref={aboutMeRef} className="snap-start h-screen">
           <AboutMeSection aboutMeRef={aboutMeRef} />
+        </div>
+        <div ref={skillRef} className="snap-start h-screen">
+          <SkillSection skillRef={skillRef} />
         </div>
         <div ref={projectRef} className="snap-start h-screen">
           <ProjectSection projectRef={projectRef} />

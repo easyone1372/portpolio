@@ -7,20 +7,49 @@ type AboutMeContentProps = {
 };
 const AboutMeContent = ({ openLink }: AboutMeContentProps) => {
   return (
-    <div className="w=full flex flex-col p-4 gap-[20px]">
+    <div className="w-full flex flex-col p-4 gap-5">
       <div className="mt-4">
         <TitleText content="About Me" className="font-bold" />
       </div>
       <div className="w-full flex flex-col p-4 gap-3">
-        <NormalText
-          content="배움을 갈구하고 도전정신을 가진 개발자"
-          className="font-semibold text-2xl"
-        />
+        <div className="relative h-16">
+          <div className="absolute top-0 left-0 z-20">
+            <NormalText
+              content="배움을 갈구하고 도전정신을 가진 개발자"
+              className="font-bold text-4xl relative"
+            />
+          </div>
+          <div className="absolute top-2 left-2 z-10">
+            <NormalText
+              content="배움을 갈구하고 도전정신을 가진 개발자"
+              className="font-bold text-4xl relative drop-shadow-lg"
+              color="text-white"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-1 mt-7">
+          <NormalText
+            content="일단 해보겠습니다!"
+            className="font-bold text-lg"
+          />
+          <NormalText content="안녕하세요. 프론트엔드 개발자를 꿈꾸는 이지원입니다." />
+          <NormalText content="새로운 것을 도전하는 걸 두려워하지 않으며 항상 배우는 태도로 임합니다." />
+          <NormalText content="실수를 저지르더라도 같은 실수를 반복하지 않도록 노력합니다." />
+          <NormalText content="사용자의 입장에서 생각하려 편리함을 최우선으로 고려하는 개발자가 되고싶습니다." />
+        </div>
         <div className="flex p-4 gap-3">
           <div className="flex flex-col gap-5 w-[400px]">
             <div className="space-y-2">
-              <NormalText content="INFO" className="w-[70px] font-bold pr-px" />
+              <NormalText
+                content="INFO"
+                className="w-[70px] font-bold pr-px text-xl"
+              />
               <BoldNormalText keyBold="이름" contentNormal="이지원" />
+              <BoldNormalText
+                keyBold="전화번호"
+                contentNormal="010-2247-2843"
+              />
               <BoldNormalText
                 keyBold="이메일"
                 contentNormal="easyone1372@gmail.com"
@@ -32,14 +61,12 @@ const AboutMeContent = ({ openLink }: AboutMeContentProps) => {
                 bClassName="hover:text-gray-400 cursor-pointer"
               />
             </div>
+          </div>
+          <div className="flex flex-col gap-5">
             <div className="space-y-2">
               <NormalText
                 content="EDUCATION"
-                className="w-[70px] font-bold pr-px"
-              />
-              <BoldNormalText
-                keyBold="2020"
-                contentNormal="서인천고등학교 졸업"
+                className="w-[70px] font-bold pr-px text-xl"
               />
               <BoldNormalText
                 keyBold="2024"
@@ -49,7 +76,7 @@ const AboutMeContent = ({ openLink }: AboutMeContentProps) => {
             <div className="space-y-2">
               <NormalText
                 content="CERTIFICATE"
-                className="w-[70px] font-bold pr-px"
+                className="w-[70px] font-bold pr-px text-xl"
               />
               <BoldNormalText
                 keyBold="2020"
@@ -57,12 +84,10 @@ const AboutMeContent = ({ openLink }: AboutMeContentProps) => {
               />
               <BoldNormalText keyBold="2020" contentNormal="GTQ인디자인 1급" />
             </div>
-          </div>
-          <div className="flex flex-col gap-5">
             <div className="space-y-2">
               <NormalText
                 content="ACTIVITE"
-                className="w-[70px] font-bold pr-px"
+                className="w-[70px] font-bold pr-px text-xl"
               />
               <BoldNormalText
                 keyBold="2023"

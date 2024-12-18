@@ -3,8 +3,8 @@ import NormalText from "../atom/NormalText";
 type HeaderContentProps = {
   titleRef: React.RefObject<HTMLDivElement>;
   aboutMeRef: React.RefObject<HTMLDivElement>;
+  skillRef: React.RefObject<HTMLDivElement>;
   projectRef: React.RefObject<HTMLDivElement>;
-  designRef: React.RefObject<HTMLDivElement>;
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
 };
 
@@ -13,7 +13,7 @@ const HeaderContent = ({
   titleRef,
   aboutMeRef,
   projectRef,
-  designRef,
+  skillRef,
   scrollToSection,
 }: HeaderContentProps) => {
   return (
@@ -31,13 +31,13 @@ const HeaderContent = ({
         />
         <NormalText
           className="hover:text-gray-400 cursor-pointer"
-          content="Project"
-          onTextClick={() => scrollToSection(projectRef)}
+          content="Skill"
+          onTextClick={() => scrollToSection(skillRef)}
         />
         <NormalText
           className="hover:text-gray-400 cursor-pointer"
-          content="Design"
-          onTextClick={() => scrollToSection(designRef)}
+          content="Project"
+          onTextClick={() => scrollToSection(projectRef)}
         />
       </nav>
     </header>

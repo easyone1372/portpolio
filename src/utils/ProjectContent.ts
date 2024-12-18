@@ -12,11 +12,11 @@ export const ProjectList: ProjectCardProps[] = [
   },
   {
     cardTitle: "소서특필",
-    cardImage: "/images/bechef.png",
-    cardDay: "2024.06.20 ~ 2024.08.06",
+    cardImage: "/images/splashview.png",
+    cardDay: "2023.01 ~ 2023.11",
     cardProject: "팀 프로젝트",
     cardContent:
-      "사용자가 주변 밀키트 판매점의 위치와 재고를 실시간으로 확인가능한 웹사이트입니다. 개인의 경험을 리뷰와 찜 기능으로 기록, 공유 할 수 있습니다.",
+      "졸업작품으로 제작한 안드로이드 어플입니다. 사용자의 글씨체를 분석한 뒤 빅데이터에 기반하여 사용자의 특성을 보여주고 작성한 글씨체는 타인과 공유할 수 있습니다.",
     cardGitUrlEvent: () =>
       window.open("https://github.com/easyone1372/finalBechefFront.git"),
   },
