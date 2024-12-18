@@ -47,7 +47,7 @@ export const learnSkills = [
   { icon: <SiAdobephotoshop />, text: "PhotoShop", iconColor: "text-ps" },
 ];
 export const triedSkills = [
-  { icon: "../../style/pngegg.png", text: "C" },
+  { icon: "/images/c.png", text: "C" },
   { icon: <FaJava />, text: "Java", iconColor: "text-orange-500" },
   { icon: <SiFlutter />, text: "Flutter", iconColor: "text-sky-400" },
   { icon: <FaFigma />, text: "Figma" },

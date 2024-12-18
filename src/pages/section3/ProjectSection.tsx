@@ -1,26 +1,31 @@
+import { useState } from "react";
 import ProjectCard from "../../components/molecules/ProjectCard";
 import TitleText from "../../components/molecules/TitleText";
+import { ProjectList } from "../../utils/ProjectContent";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type ProjectSectionProps = {
   projectRef: React.RefObject<HTMLDivElement>;
 };
 
 const ProjectSection = ({ projectRef }: ProjectSectionProps) => {
-  const handleWhiteGit = () => {
-    return window.open("https://github.com/easyone1372/whtieclinic.git");
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(ProjectList.length / itemsPerPage);
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => Math.max(0, prev - 1));
   };
-  const handleTodoList = () => {
-    return window.open("https://github.com/easyone1372/WIP_todolist.git");
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(totalPages - 1, prev + 1));
   };
-  const linkToTodoList = () => {
-    return window.open("https://easyone1372.github.io/WIP_todolist/");
-  };
-  const handleBechefGit = () => {
-    return window.open("https://github.com/easyone1372/finalBechefFront.git");
-  };
-  const handleCheckAttend = () => {
-    return window.open("https://github.com/easyone1372/checkAttend.git");
-  };
+
+  const visibleProjects = ProjectList.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
   return (
     <section className="w-screen h-screen bg-gaWhite">
       <div className="max-w-5xl w-full mx-auto">
@@ -28,40 +33,30 @@ const ProjectSection = ({ projectRef }: ProjectSectionProps) => {
           <div className="mt-4">
             <TitleText content="Project" className="font-bold" />
           </div>
-          <div className="grid grid-cols-2 gap-4 ">
-            <ProjectCard
-              cardTitle="White Clinic 관리자 페이지"
-              cardImage=""
-              cardDay="2024.08.16 ~ 진행중"
-              cardProject="팀 프로젝트"
-              cardContent=""
-              cardGitUrlEvent={handleWhiteGit}
-            />
-            <ProjectCard
-              cardTitle="BeChef -밀키트 판매 매장 검색 사이트"
-              cardImage=""
-              cardDay="2024.06.20 ~ 2024.08.06"
-              cardProject="팀 프로젝트"
-              cardContent=""
-              cardGitUrlEvent={handleBechefGit}
-            />
-            <ProjectCard
-              cardTitle="TodoList"
-              cardImage=""
-              cardDay="2024.07.01 ~ 2024.07.05"
-              cardContent=""
-              cardProject="개인 프로젝트"
-              cardGitUrlEvent={handleTodoList}
-              cardLinkEvent={linkToTodoList}
-            />
-            <ProjectCard
-              cardTitle="출석부 시스템"
-              cardImage=""
-              cardDay="2024.06.19 ~ 2024.06.28"
-              cardContent=""
-              cardProject="개인 프로젝트"
-              cardGitUrlEvent={handleCheckAttend}
-            />
+          <div className="w-full h-[720px] relative px-2">
+            <div className="grid grid-cols-2 gap-4">
+              {visibleProjects.map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+            </div>
+
+            {currentPage > 0 && (
+              <button
+                onClick={handlePrevPage}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 z-10 transition-all"
+              >
+                <FaChevronLeft size={24} className="text-gray-600" />
+              </button>
+            )}
+            {currentPage < totalPages - 1 &&
+              ProjectList.length > itemsPerPage && (
+                <button
+                  onClick={handleNextPage}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 z-10 transition-all"
+                >
+                  <FaChevronRight size={24} className="text-gray-600" />
+                </button>
+              )}
           </div>
         </div>
       </div>

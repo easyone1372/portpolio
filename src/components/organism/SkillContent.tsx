@@ -1,7 +1,7 @@
+import { ableSkills, learnSkills, triedSkills } from "../../utils/SkillContent";
 import SkillNormalText from "../atom/SkillNormalText";
 
 import SkillList from "../molecules/SkillList";
-import { ableSkills, learnSkills, triedSkills } from "../../utils/SkillContent";
 
 const SkillContent = () => {
   return (

@@ -43,7 +43,7 @@ const AboutMeContent = ({ openLink }: AboutMeContentProps) => {
               />
               <BoldNormalText
                 keyBold="2024"
-                contentNormal="덕성여자대학교 졸업"
+                contentNormal="덕성여자대학교 IT미디어공학 졸업"
               />
             </div>
             <div className="space-y-2">
@@ -82,7 +82,19 @@ const AboutMeContent = ({ openLink }: AboutMeContentProps) => {
                     />
                   </div>
                 </div>
-                <BoldNormalText keyBold="2024-04" contentNormal="SPRING" />
+                <BoldNormalText
+                  keyBold="2024-04"
+                  contentNormal="자바 기반 spring 응용 sw개발자 양성과정"
+                />
+                <div className="flex">
+                  <div className="w-[87px]" />
+                  <div className="w-[405px]">
+                    <NormalText
+                      className="font-light text-slate-600"
+                      content="국비수업 - react, spring boot 등의 활용 방법을 배움"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
