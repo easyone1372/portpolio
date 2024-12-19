@@ -1,10 +1,8 @@
-type SkillText = "편해요" | "할 줄 알아요" | "사용해봤어요";
-
 type SkillNormalTextProps = {
   className?: string;
   color?: string;
   onTextClick?: () => void;
-  content: SkillText;
+  content: string;
 };
 
 const SkillNormalText = ({
